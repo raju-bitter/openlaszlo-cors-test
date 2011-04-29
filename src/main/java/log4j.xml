@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/docs/api/org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+  threshold="null" debug="null">
+
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <param name="Target" value="System.out" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%r [%t] %-5p %c %x - %m%n"/>
+    </layout>
+  </appender>
+
+  <appender name="FILE" class="org.apache.log4j.FileAppender">
+    <param name="file" value="/Users/raju/logs/cors.log" />
+    <param name="Append" value="true" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%r [%t] %-5p %c %x - %m%n"/>
+    </layout>
+  </appender>
+
+  <category name="org.eclipse.jetty.servlets" additivity="true">
+    <priority value="debug" />
+    <appender-ref ref="FILE" />
+  </category>
+
+  <root>
+    <priority value="info" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+</log4j:configuration>

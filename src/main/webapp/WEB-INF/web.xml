@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>Cross-Origin Resource Sharing Test Webapp</display-name>
+    <filter>
+        <filter-name>CrossOriginFilter</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+       <init-param>
+          <param-name>allowedMethods</param-name>
+          <param-value>GET,POST</param-value>
+       </init-param>
+       <init-param>
+          <param-name>allowedMethods</param-name>
+          <param-value>GET,POST</param-value>
+       </init-param>
+       <init-param>
+          <param-name>allowedHeaders</param-name>
+          <param-value>X-Requested-With</param-value>
+       </init-param>
+       <init-param>
+          <param-name>allowCredentials</param-name>
+          <param-value>true</param-value>
+       </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CrossOriginFilter</filter-name>
+        <url-pattern>/corstest</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <description>Test servlet for CORS functionality with OpenLaszlo - returns XML dataset</description>
+        <display-name>CORSTestServlet</display-name>
+        <servlet-name>CORSTestServlet</servlet-name>
+        <servlet-class>com.kamijs.cors.test.CORSTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CORSTestServlet</servlet-name>
+        <url-pattern>/corstest</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
