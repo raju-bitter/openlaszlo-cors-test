@@ -1,0 +1,11 @@
+Cross-origin resource sharing test web application for the OpenLaszlo platform.
+
+Instructions:
+Checkout the source code into a directory of your choice. Launch the web application
+in Jetty using:
+
+mvn jetty:run
+
+The web application will be deployed at http://localhost:9000/cors. The test servlet with
+JSP response setting a cookie through a CORS request is deployed at
+http://localhost:9000/cors/corstest
