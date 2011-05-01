@@ -1,4 +1,4 @@
-package com.kamijs.cors.test;
+package org.openlaszlo.cors.test;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -65,9 +65,10 @@ public class CORSTestServlet extends HttpServlet {
     private void checkCookie(HttpServletRequest request, HttpServletResponse response) {
         this.sessionCookie = this.getCookie(request);
         if (this.sessionCookie == null) {
+            logger.debug("CORS not send by client, trying to set cookie now.");
             this.setCookie(response);
         } else {
-
+            logger.debug("CORS cookie is already set.");
         }
     }
 
