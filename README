@@ -6,6 +6,4 @@ in Jetty using:
 
 mvn jetty:run
 
-The web application will be deployed at http://localhost:9000/cors. The test servlet with
-JSP response setting a cookie through a CORS request is deployed at
-http://localhost:9000/cors/corstest
+The web application will be deployed at http://localhost:9000/cors. Open that page in the browser for more information.
