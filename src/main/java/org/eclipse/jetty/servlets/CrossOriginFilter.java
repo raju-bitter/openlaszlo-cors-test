@@ -134,12 +134,6 @@ public class CrossOriginFilter implements Filter {
         }
         allowCredentials = Boolean.parseBoolean(allowedCredentialsConfig);
 
-        logger.debug("Cross-origin filter configuration: "
-                + ALLOWED_ORIGINS_PARAM + " = " + allowedOriginsConfig + ", "
-                + ALLOWED_METHODS_PARAM + " = " + allowedMethodsConfig + ", "
-                + ALLOWED_HEADERS_PARAM + " = " + allowedHeadersConfig + ", "
-                + PREFLIGHT_MAX_AGE_PARAM + " = " + preflightMaxAgeConfig + ", "
-                + ALLOWED_CREDENTIALS_PARAM + " = " + allowedCredentialsConfig);
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -164,6 +158,10 @@ public class CrossOriginFilter implements Filter {
         }
 
         chain.doFilter(request, response);
+        logger.debug("Cross-origin filter configuration:");
+        logger.debug(ALLOWED_ORIGINS_PARAM + " = " + this.allowedOrigins);
+        logger.debug(PREFLIGHT_MAX_AGE_PARAM + " = " + this.preflightMaxAge);
+        logger.debug(ALLOWED_CREDENTIALS_PARAM + " = " + this.allowCredentials);
     }
 
     private boolean originMatches(String origin) {
