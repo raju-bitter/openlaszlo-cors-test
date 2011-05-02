@@ -18,7 +18,7 @@
 	Cookie[] cookies = request.getCookies();
 	if (cookies != null) {
 		for (int i=0; i<cookies.length; i++) {
-	%>		<cookie name="<%= cookies[i].getName() %>"><%= cookies[i].getValue() %></cookie><%
+	%>		<cookie><%= cookies[i].getName() %> = <%= cookies[i].getValue() %></cookie><%
 		}
 	}	
 	%>    </cookies>
@@ -28,7 +28,7 @@
    String name = (String) names.nextElement();
    String value = request.getHeader(name);
    if (! name.equals("Cookie")) {
-%><header name="<%= name %>"><%= value %></header><%
+%><header><%= name %>: <%= value %></header><%
    }
  }
 %>    </headers>
