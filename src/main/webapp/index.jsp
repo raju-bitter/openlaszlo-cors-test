@@ -14,7 +14,7 @@
         <p>The servlets/URLs listed here need to accessed from out of an OpenLaszlo 
            application running in DHTML/HTML5 runtime on a different port on the
            same machine.</p>
-        <p>To run this application 
+        <p>Use the test file $LPS_HOME/test/data/dhtml-cross-origin-dataset.lzx for testing.</p>
         <ul>
             
             <li>CORS test servlet &quot;withCredentials: false&quot;<br />
@@ -24,6 +24,10 @@
                 <a href="<%=request.getContextPath()%>/corstest/withCredentials"><%=request.getContextPath()%>/corstest/withCredentials</a>
             <li>
         </ul>
+        <p>Useful links for testing:</p>
+        <p>Link to LZX test app <a href="http://localhost:8080/trunk/test/data/dhtml-cross-origin-dataset.lzx">http://localhost:8080/trunk/test/data/dhtml-cross-origin-dataset.lzx</a><br />
+        <p>Chrome browser cookies: chrome://settings/cookies<br />
+        </p>
         <p>Corresponding OpenLaszlo JIRA entries</p>
         <ol>
             <li><a href="http://jira.openlaszlo.org/jira/browse/LPP-9897">LPP-9897: Remove support for proxied mode and proxied datasets</li>
